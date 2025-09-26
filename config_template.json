@@ -1,0 +1,33 @@
+{
+  "data_paths": {
+    "uwb_data_path": "/path/to/your/uwb/dataset",
+    "csi_mat_file": "/path/to/your/csi/dataset.mat",
+    "output_dir": "./results"
+  },
+  "experiments": {
+    "train_experiments": ["002"],
+    "val_experiments": ["002"]
+  },
+  "training": {
+    "batch_size": 32,
+    "sequence_length": 4,
+    "max_samples": null,
+    "epochs": 20,
+    "learning_rate": 1e-3,
+    "device": "cuda"
+  },
+  "model": {
+    "d_model": 80,
+    "n_layers": 2,
+    "num_gaussians": 16,
+    "dropout": 0.1
+  },
+  "distillation": {
+    "temperature": 15.0,
+    "alpha": 0.2,
+    "beta": 0.8,
+    "step_size": 0.01,
+    "teacher_lr": 2e-3,
+    "student_lr": 1e-3
+  }
+}

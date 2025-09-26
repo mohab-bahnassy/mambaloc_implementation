@@ -1,0 +1,1 @@
+{"input_features": 100, "output_features": 2, "d_model": 128, "model_type": "SimpleUWBTransformerTeacher"}

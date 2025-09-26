@@ -1,0 +1,37 @@
+{
+    "UWBRegressionModel": {
+        "input": {
+            "input_features": 113,
+            "output_features": 2,
+            "output_mode": "sequence",
+            "dropout": 0.1,
+            "output_description": "tag4422_x, tag4422_y coordinates"
+        }
+    },
+    "UWBMixerModel": {
+        "input": {
+            "d_model": 64,
+            "n_layer": 2,
+            "final_prenorm": "layer"
+        }
+    },
+    "Block1": {
+        "n_layers": 2,
+        "BlockType": "modules.phi_block",
+        "block_input": {
+            "resid_dropout": 0.1
+        },
+        "CoreType": "modules.mixers.phi_attention",
+        "core_input": {
+            "attn_type": "eager",
+            "hidden_size": 64,
+            "num_attention_heads": 4,
+            "num_key_value_heads": 4,
+            "max_position_embeddings": 128,
+            "rope_theta": 10000.0,
+            "rope_scaling": null,
+            "attention_dropout": 0.1,
+            "bias": false
+        }
+    }
+} 

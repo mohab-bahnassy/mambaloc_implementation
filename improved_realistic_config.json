@@ -1,0 +1,56 @@
+{
+  "description": "Improved realistic hyperparameters for cross-modal distillation",
+  "improvements": {
+    "student_model_size": "Increased d_model from 64 to 256, n_layer from 2 to 4",
+    "teacher_model_size": "Increased d_model from 256 to 384, n_layers from 4 to 6",
+    "training_epochs": "Significantly increased all training epochs",
+    "dataset_size": "Increased max_samples from 300 to 3000",
+    "loss_balance": "More balanced distillation vs task loss (0.4/0.6)",
+    "latent_capacity": "Increased latent_dim from 128 to 256"
+  },
+  "teacher_model": {
+    "architecture": "SimpleUWBTransformerTeacher",
+    "d_model": 384,
+    "n_layers": 6,
+    "n_heads": 12,
+    "parameters": "~2.3M (estimated)"
+  },
+  "student_model": {
+    "architecture": "CSI Mamba",
+    "d_model": 256,
+    "n_layer": 4,
+    "d_state": 32,
+    "n_v_heads": 16,
+    "n_qk_heads": 16,
+    "expand": 2,
+    "chunk_size": 128,
+    "parameters": "~1.5M (estimated)"
+  },
+  "training_hyperparameters": {
+    "learning_rate": 0.0005,
+    "batch_size": 32,
+    "max_samples": 3000,
+    "epochs_baseline": 30,
+    "teacher_epochs": 20,
+    "pretrain_epochs": 8,
+    "stage1_epochs": 10,
+    "stage2_epochs": 12,
+    "stage3_epochs": 15,
+    "temperature": 3.5,
+    "alpha": 0.4,
+    "beta": 0.6,
+    "latent_dim": 256
+  },
+  "sequence_lengths": {
+    "uwb_seq_length": 32,
+    "csi_seq_length": 4
+  },
+  "expected_improvements": [
+    "More realistic model sizes for proper evaluation",
+    "Better knowledge distillation with balanced loss weights",
+    "Longer training for convergence",
+    "Larger dataset for better generalization",
+    "Higher capacity models for complex pattern learning"
+  ],
+  "usage_command": "python train_cross_modal_distillation_comparison.py --mode comparison --epochs 30 --learning_rate 5e-4 --max_samples 3000 --latent_dim 256 --alpha 0.4 --beta 0.6"
+} 

@@ -1,0 +1,28 @@
+{
+  "mode": "comparison",
+  "uwb_data_path": "/media/mohab/Storage HDD/Downloads/uwb2(1)",
+  "csi_mat_file": "/home/mohab/Desktop/mohawk_final/csi dataset/wificsi1_exp002.mat",
+  "train_experiments": [
+    "002"
+  ],
+  "val_experiments": [
+    "002"
+  ],
+  "max_samples": 3000,
+  "uwb_seq_length": 32,
+  "csi_seq_length": 4,
+  "latent_dim": 128,
+  "batch_size": 32,
+  "epochs": 20,
+  "learning_rate": 0.001,
+  "log_interval": 10,
+  "pretrain_epochs": 3,
+  "stage1_epochs": 2,
+  "stage2_epochs": 2,
+  "stage3_epochs": 3,
+  "temperature": 4.0,
+  "alpha": 0.7,
+  "beta": 0.3,
+  "device": "cuda",
+  "output_dir": "./mohawk_cross_modal_results"
+}

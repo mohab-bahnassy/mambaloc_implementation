@@ -1,0 +1,54 @@
+{
+    "CSIRegressionModel": {
+        "input": {
+            "input_features": 280,
+            "output_features": 2,
+            "output_mode": "last",
+            "dropout": 0.1,
+            "output_description": "tag4422_x, tag4422_y coordinates"
+        }
+    },
+    "UWBMixerModel": {
+        "input": {
+            "d_model": 64,
+            "n_layer": 2,
+            "final_prenorm": "layer"
+        }
+    },
+    "Block1": {
+        "n_layers": 2,
+        "BlockType": "modules.phi_block",
+        "block_input": {
+            "resid_dropout": 0.1
+        },
+        "CoreType": "modules.mixers.discrete_mamba2",
+        "core_input": {
+            "d_state": 16,
+            "n_v_heads": 8,
+            "n_qk_heads": 8,
+            "d_conv": 4,
+            "conv_bias": true,
+            "expand": 1,
+            "chunk_size": 64,
+            "activation": "identity",
+            "bias": false
+        }
+    },
+    "hidden_size": 256,
+    "n_layers": 6,
+    "expand": 2,
+    "dt_rank": "auto",
+    "d_state": 16,
+    "d_conv": 4,
+    "dt_min": 0.001,
+    "dt_max": 0.1,
+    "dt_init": "random",
+    "dt_scale": 1.0,
+    "dt_init_floor": 1e-4,
+    "conv_bias": true,
+    "bias": false,
+    "use_fast_path": true,
+    "layer_idx": null,
+    "device": null,
+    "dtype": null
+} 
