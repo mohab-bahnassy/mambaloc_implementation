@@ -2,7 +2,6 @@
 
 ![Python](https://img.shields.io/badge/python-v3.8+-blue.svg)
 ![PyTorch](https://img.shields.io/badge/PyTorch-v2.2.1-red.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
 
 ## 📄 Paper Information
 
